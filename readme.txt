@@ -4,7 +4,7 @@ Donate link: https://www.omaksolutions.com
 Tags: floating icons, floating, icons, moving icons, special effects, christmas trees
 Requires at least: 3.0.1
 Requires PHP: 5.3
-Tested up to: 5.7
+Tested up to: 6.3
 Stable tag: trunk	
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,7 @@ A lightweight plugin that displays icons floating across the screen or a specifi
 
 == Description ==
 
-Floating Icons enhances the user experience during special ocassions or at times when you are offering some sales or discount. It grabs user attention by greeting the floating icons which are moving across the screen.
+Floating Icons enhances the user experience during special occasions or at times when you are offering some sales or discount. It grabs user attention by greeting the floating icons which are moving across the screen.
 
 Perfect for festive effects, sales and discount season, for crazy-bloggers or anyone who is willing to show some effects to greet the user.
 
