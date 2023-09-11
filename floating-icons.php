@@ -5,21 +5,21 @@ Plugin URI:		https://www.slickpopup.com/free-wordpress-floating-icons-plugin
 Description:	Floating Icons enhances the user experience during special ocassions or at times when you are offering some sales or discount. It grabs user attention by greeting the floating icons which are moving across the screen.
 Author URI:		https://www.omaksolutions.com 
 Author:			Om Ak Solutions 
-Version:		1.0.0
+Version:		1.1.5
 Text Domain:	floating-icons
 */
 
-define( 'OMFE_VERSION', '1.0.0' );
-define( 'OMFE_REQUIRED_WP_VERSION', '3.0.1' );
-define( 'OMFE_PLUGIN', __FILE__ ); 
+const OMFE_VERSION = '1.1.5';
+const OMFE_REQUIRED_WP_VERSION = '3.0.1';
+const OMFE_PLUGIN = __FILE__;
 define( 'OMFE_PLUGIN_BASENAME', plugin_basename( OMFE_PLUGIN ) );
 define( 'OMFE_PLUGIN_NAME', trim( dirname( OMFE_PLUGIN_BASENAME ), '/' ) );
 define( 'OMFE_PLUGIN_DIR', untrailingslashit( dirname( OMFE_PLUGIN ) ) );
+
 require_once(OMFE_PLUGIN_DIR . '/adminside/main.php');
 
-
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/adminside/admin/ReduxCore/framework.php' ) ) {
-	require_once( OMFE_PLUGIN_DIR . '/adminside/admin/ReduxCore/framework.php' );
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/adminside/admin/redux-framework/redux-framework.php' ) ) {
+	require_once( OMFE_PLUGIN_DIR . '/adminside/admin/redux-framework/redux-framework.php' );
 }
 
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/adminside/admin/admin-init.php' ) ) {
@@ -29,12 +29,11 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/adminside/adm
 add_action('wp_enqueue_scripts', 'omfe_add_scripts');
 function omfe_add_scripts() {
 	wp_enqueue_style('font-awesome', omfe_plugin_url( 'libs/css/font-awesome.min.css', dirname(__FILE__)));
-	wp_enqueue_script('custom', omfe_plugin_url( 'libs/js/custom.js', dirname(__FILE__)));
+	wp_enqueue_script('omfe-custom', omfe_plugin_url( 'libs/js/custom.js', dirname(__FILE__), array('jquery'), null, true));
 }
-
 add_action('admin_enqueue_scripts', 'omfe_admin_scripts');
 function omfe_admin_scripts() {
-	wp_enqueue_script('custom', omfe_plugin_url( 'libs/js/admin-ajax.js', dirname(__FILE__)));
+	wp_enqueue_script('omfe-admin-ajax', omfe_plugin_url( 'libs/js/admin-ajax.js', dirname(__FILE__)), array('jquery'), null, true);
 }
 
 /**
@@ -192,7 +191,8 @@ function omafe_add_action_links($links) {
 add_action( 'wp_ajax_omfe_notice_dismissable', 'omfe_notice_dismissable' );
 function omfe_notice_dismissable() {
 	
-	$data_btn = isset($_POST['dataBtn']) ? $_POST['dataBtn'] : '';
+	// Sanitize string for added security
+	$data_btn = isset($_POST['dataBtn']) ? sanitize_text_field($_POST['dataBtn']) : '';
 	
 	if(empty($data_btn)) return; 
 	

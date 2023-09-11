@@ -1,9 +1,11 @@
 === Floating Icons ===
-Contributors: ak.singla,saviomak,nikhilomak
+Contributors: ak.singla, saviomak28, nikhilomak
+Donate link: https://www.omaksolutions.com
 Tags: floating icons, floating, icons, moving icons, special effects, christmas trees
 Requires at least: 3.0.1
-Tested up to: 4.9.8
-Stable tag: 1.0	
+Requires PHP: 5.3
+Tested up to: 5.7
+Stable tag: trunk	
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +17,7 @@ Floating Icons enhances the user experience during special ocassions or at times
 
 Perfect for festive effects, sales and discount season, for crazy-bloggers or anyone who is willing to show some effects to greet the user.
 
-[[Check out the Demo](https://www.slickpopup.com/#otherfeatures/utm_source=floatingicons&utm_medium=wporg&utm_campaign=OmAkSols&utm_term=floatingiconlink)]
+[[Check out the Demo](https://www.slickpopup.com/free-wordpress-floating-icons-plugin/?utm_source=floatingicons&utm_medium=wporg&utm_campaign=OmAkSols&utm_term=floatingiconlink)]
 
 *Note:* Basic jQuery should not have any conflicts on your website.
 
@@ -91,6 +93,29 @@ For any doubts or queries, please read our F.A.Q section. If it doesn't come out
 
 == Changelog ==
 
+= 1.1.5 =
+* Minor Improvements
+
+= 1.1.4 =
+* Updated: Redux Framework
+
+= 1.1.3 =
+* Compatible with version 5.1
+* Minor Bugs Fixed
+
+= 1.1.2 =
+* Compatible with version 5.0
+* Minor Bugs Fixed
+
+= 1.1.1 =
+* Minor Bugs Fixed
+
+= 1.1.0 =
+* Fixed: fread(), fopen() and fclose() notices.
+* Added: Icon to menu
+* Added: Hints and notice for user convenience
+* Redesigned settings panel
+* Minor bugs fixed
 
 = 1.0 =
 * First Launch for WordPress.org Community 
